@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.EquipesFragment">
+
+    <Button
+        android:id="@+id/botaoCriarEquipeFragmentId"
+        android:layout_width="160dp"
+        android:layout_height="130dp"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:background="@color/cor_botao_darker"
+        android:padding="10dp"
+        android:text="criar equipe "
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <Button
+        android:id="@+id/botaoManterEquipeId"
+        android:layout_width="160dp"
+        android:layout_height="130dp"
+        android:layout_below="@+id/ButtonVoltarId"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/cor_botao_darker"
+        android:padding="10dp"
+        android:text="MANTER EQUIPE"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <Button
+        android:id="@+id/botaoInserirJogadorFragmentId"
+        android:layout_width="160dp"
+        android:layout_height="130dp"
+        android:layout_below="@+id/botaoCriarEquipeId"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="230dp"
+        android:layout_marginLeft="10dp"
+        android:background="@color/cor_botao_darker"
+        android:padding="10dp"
+        android:text="inserir jogador"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <Button
+        android:id="@+id/botaoManterJogadorId"
+        android:layout_width="160dp"
+        android:layout_height="130dp"
+        android:layout_below="@+id/botaoManterEquipeId"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="212dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/botaoInserirJogadorFragmentId"
+        android:layout_toRightOf="@+id/botaoInserirJogadorFragmentId"
+        android:background="@color/cor_botao_darker"
+        android:padding="10dp"
+        android:text="MANTER JOGADOR"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="415dp"
+        android:gravity="clip_vertical|center_horizontal"
+        android:text="Bem-vindo ao FutsalFC"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="bold|italic" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="fill_parent"
+        android:layout_height="168dp"
+        android:layout_marginTop="450dp"
+        android:background="@drawable/ligafutsal" />
+
+
+</FrameLayout>

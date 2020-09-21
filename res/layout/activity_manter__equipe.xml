@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal|center_vertical"
+    tools:context=".activity.Manter_Equipe">
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:text="consulta e atualização da equipe"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/background_light" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="412dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView32"
+        android:layout_marginTop="42dp"
+        android:background="@android:color/background_light"
+        android:gravity="center"
+        android:text="Nome &amp; Liga"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/holo_green_dark" />
+
+    <EditText
+        android:id="@+id/editTextLigaId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listViewNomeLigaId"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:id="@+id/LigaTVId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listViewNomeLigaId"
+        android:layout_alignStart="@+id/editTextLigaId"
+        android:layout_alignLeft="@+id/editTextLigaId"
+        android:layout_marginTop="15dp"
+        android:text="Liga"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/background_light" />
+
+    <Button
+        android:id="@+id/botaoAtualizaLiga"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextLigaId"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="40dp"
+        android:text="Atualizar Dados de Equipe" />
+
+    <ListView
+        android:id="@+id/listViewNomeLigaId"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/textView34"
+        android:layout_gravity="center_horizontal|top"
+        android:divider="@color/gray"
+        android:dividerHeight="1dp"
+        android:foregroundGravity="center_vertical|center_horizontal" />
+
+    <ImageView
+        android:id="@+id/VoltarId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/botaoAtualizaLiga"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/ic_exit_to_app"
+        android:onClick="voltar" />
+
+
+</RelativeLayout>

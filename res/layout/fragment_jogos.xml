@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.JogosFragment">
+
+    <Button
+        android:id="@+id/botaoMarcarPartidaId"
+        android:layout_width="180dp"
+        android:layout_height="99dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@color/cor_botao_darker"
+        android:padding="10dp"
+        android:text="Cadastrar jogos"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <Button
+        android:id="@+id/botaoJogosId"
+        android:layout_width="180dp"
+        android:layout_height="99dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="80dp"
+        android:layout_toEndOf="@+id/imageView4"
+        android:layout_toRightOf="@+id/imageView4"
+        android:background="@color/cor_botao_darker"
+        android:padding="10dp"
+        android:text="Jogos"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <Button
+        android:id="@+id/botaoEstatisticasId"
+        android:layout_width="375dp"
+        android:layout_height="108dp"
+        android:layout_below="@+id/imageView4"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="14dp"
+        android:background="@color/cor_botao_darker"
+        android:padding="10dp"
+        android:text="estatísticas"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:gravity="clip_vertical|center_horizontal"
+        android:text="Bem-vindo ao FutsalFC"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="bold|italic" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="fill_parent"
+        android:layout_height="168dp"
+        android:layout_marginTop="445dp"
+        android:background="@drawable/ligafutsal" />
+
+</FrameLayout>

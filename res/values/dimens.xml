@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_largura">450px</dimen>
+    <dimen name="logo_altura">450px</dimen>
+    <dimen name="botaoIniciar">20dp</dimen>
+</resources>

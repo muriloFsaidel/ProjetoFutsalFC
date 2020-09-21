@@ -1,0 +1,20 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/fundo_app</item>
+        <!--<item name="android:itemBackground">@android:color/white</item>
+        <item name="android:textColor">@android:color/black</item>-->
+    </style>
+
+    <style name="BotaoPadrao" parent="Theme.AppCompat.Light">
+        <item name="android:colorButtonNormal">@color/cor_botao</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:colorControlHighlight">@color/cor_botao_darker</item>
+    </style>
+
+</resources>

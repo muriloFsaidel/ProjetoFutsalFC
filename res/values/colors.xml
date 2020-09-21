@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1e90ff</color>
+    <color name="colorPrimaryDark">#005db6</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="fundo_app">#1e90ff</color>
+    <color name="cor_botao">#005db6</color>
+    <color name="cor_botao_darker">#004a92</color>
+    <color name="gray">#CCCCCC</color>
+</resources>

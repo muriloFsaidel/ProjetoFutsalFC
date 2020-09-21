@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal|center_vertical"
+    tools:context=".activity.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ligafutsal" />
+
+    <EditText
+        android:id="@+id/ETEmailId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:hint="Digite seu e-mail"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/BTLogarId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ETSenhaId"
+        android:layout_marginTop="20dp"
+        android:text="Logar"
+        android:textAlignment="center"
+        android:textStyle="bold|italic"
+        android:theme="@style/BotaoPadrao"
+        />
+
+    <TextView
+        android:id="@+id/TVCadastreSeId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BTLogarId"
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="11dp"
+        android:onClick="abrirCadastroUsuario"
+        android:text="Não tem conta? Cadastre-se."
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/ETSenhaId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ETEmailId"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:hint="Digite sua senha"
+        android:inputType="textPassword" />
+</RelativeLayout>

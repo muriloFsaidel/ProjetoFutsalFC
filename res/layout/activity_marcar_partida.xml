@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal|center_vertical"
+    tools:context=".activity.Marcar_partida">
+
+    <EditText
+        android:id="@+id/CV1Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/textView42"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/CA1Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/textView42"
+        android:layout_marginLeft="262dp"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/Ass1Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/textView42"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/bCadastrarDadosId"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerJogadores6Id"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="35dp"
+        android:background="#1059cd"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="Cadastrar dados"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/edAdversarioId"
+        android:layout_marginLeft="262dp"
+        android:layout_marginTop="13dp"
+        android:text="CA"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="20dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/textView31"
+        android:layout_marginLeft="142dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginRight="20dp"
+        android:text="G"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="20dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/textView31"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="53dp"
+        android:text="A"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <Spinner
+        android:id="@+id/spinnerGolsDaCasaId"
+        android:layout_width="121dp"
+        android:layout_height="41dp"
+        android:layout_below="@+id/textView15"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="28dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="10dp"
+        android:text="Data:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <EditText
+        android:id="@+id/dataId"
+        android:layout_width="306dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="0dp"
+        android:layout_toEndOf="@+id/textView13"
+        android:layout_toRightOf="@+id/textView13"
+        android:ems="10"
+        android:hint="DDMMAAAA"
+        android:inputType="date"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <EditText
+        android:id="@+id/edAdversarioId"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/edMeuTimeId"
+        android:layout_alignBottom="@+id/edMeuTimeId"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/edMeuTimeId"
+        android:layout_toRightOf="@+id/edMeuTimeId"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="65dp"
+        android:text="Quadro:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <EditText
+        android:id="@+id/edMeuTimeId"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="165dp"
+        android:layout_marginRight="0dp"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <Spinner
+        android:id="@+id/spinnerGolsAdversarioId"
+        android:layout_width="140dp"
+        android:layout_height="41dp"
+        android:layout_below="@+id/RGQuadroId"
+        android:layout_marginLeft="244dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="0dp" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="87dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/RGQuadroId"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="17dp"
+        android:gravity="center"
+        android:text="X"
+        android:textColor="@android:color/white"
+        android:textSize="50sp"
+        android:textStyle="normal|bold|italic" />
+
+    <Spinner
+        android:id="@+id/spinnerJogadoresId"
+        android:layout_width="140dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/textView14"
+        android:layout_marginTop="0dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="44dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edMeuTimeId"
+        android:layout_marginTop="13dp"
+        android:text="J"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/edAdversarioId"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="13dp"
+        android:text="CV"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="normal|bold|italic" />
+
+    <RadioGroup
+        android:id="@+id/RGQuadroId"
+        android:layout_width="107dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/dataId"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toEndOf="@+id/textView15"
+        android:layout_toRightOf="@+id/textView15">
+
+        <RadioButton
+            android:id="@+id/RB1"
+            android:layout_width="48dp"
+            android:layout_height="50dp"
+            android:text="1" />
+
+        <RadioButton
+            android:id="@+id/RB2"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="-50dp"
+            android:text="2" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/Gol1Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/textView42"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/Gol2Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/Gol1Id"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/Gol3Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/Gol2Id"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/Ass2Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/Ass1Id"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/Ass3Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/Ass2Id"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/CA2Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/CA1Id"
+        android:layout_marginLeft="262dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/CA3Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/CA2Id"
+        android:layout_marginLeft="262dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/CV2Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/CV1Id"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/CV3Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/CV2Id"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <Spinner
+        android:id="@+id/spinnerJogadores2Id"
+        android:layout_width="140dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/spinnerJogadoresId"
+        android:layout_marginTop="0dp" />
+
+    <Spinner
+        android:id="@+id/spinnerJogadores3Id"
+        android:layout_width="140dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/spinnerJogadores2Id"
+        android:layout_marginTop="0dp" />
+
+    <EditText
+        android:id="@+id/Gol4Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/Gol3Id"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/Ass4Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/Ass3Id"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/CA4Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/CA3Id"
+        android:layout_marginLeft="262dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/CV4Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/CV3Id"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/Gol5Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/Gol4Id"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/Ass5Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/Ass4Id"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/CA5Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/CA4Id"
+        android:layout_marginLeft="262dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/CV5Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/CV4Id"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/Gol6Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/Gol5Id"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/Ass6Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/Ass5Id"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/CA6Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/CA5Id"
+        android:layout_marginLeft="262dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <EditText
+        android:id="@+id/CV6Id"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/CV5Id"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="@string/N"
+        android:inputType="number"
+        android:text="0" />
+
+    <Spinner
+        android:id="@+id/spinnerJogadores4Id"
+        android:layout_width="140dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/spinnerJogadores3Id"
+        android:layout_marginTop="0dp" />
+
+    <Spinner
+        android:id="@+id/spinnerJogadores5Id"
+        android:layout_width="140dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/spinnerJogadores4Id"
+        android:layout_marginTop="0dp" />
+
+    <Spinner
+        android:id="@+id/spinnerJogadores6Id"
+        android:layout_width="140dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/spinnerJogadores5Id"
+        android:layout_marginTop="0dp" />
+
+    <ImageView
+        android:id="@+id/VoltarMarcarPartidaId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerJogadores6Id"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/ic_exit_to_app"
+        android:onClick="voltar3"
+        app:srcCompat="@drawable/ic_exit_to_app" />
+
+
+</RelativeLayout>

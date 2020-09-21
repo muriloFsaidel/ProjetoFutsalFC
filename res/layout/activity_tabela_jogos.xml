@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal|center_vertical"
+    tools:context=".activity.TabelaJogos">
+
+    <ListView
+        android:id="@+id/LVAllId"
+        android:layout_width="fill_parent"
+        android:layout_height="504dp"
+        android:layout_below="@+id/CHReloadId"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:divider="@color/colorAccent"
+        android:dividerHeight="1dp"/>
+
+    <EditText
+        android:id="@+id/ETDateId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="DDMMAAAA"
+        android:inputType="date"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/botaoConsultarId"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginLeft="-1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_toEndOf="@+id/ETDateId"
+        android:layout_toRightOf="@+id/ETDateId"
+        android:background="#1059cd"
+        android:text="Consultar"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold|italic" />
+
+    <CheckBox
+        android:id="@+id/CHReloadId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ETDateId"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:text="Recarregar Partidas"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/botaoVoltarTabelaJogosId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LVAllId"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_exit_to_app"
+        android:foregroundGravity="center_vertical|center_horizontal"
+        android:onClick="Voltar4" />
+
+
+</RelativeLayout>
