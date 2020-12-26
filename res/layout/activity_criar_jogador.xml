@@ -6,22 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".activity.CriarJogadorActivity">
 
-    <ImageView
+    <include
+        android:id="@+id/tb_Criar_Jogador"
+        layout="@layout/toolbar"></include>
+    <!--<ImageView
         android:id="@+id/imageView7"
         android:layout_width="fill_parent"
         android:layout_height="@dimen/logo_largura"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/ligafutsal" />
+        android:background="@drawable/ligafutsal"
+        android:gravity="center_horizontal|center_vertical"(RelativeLayout)/>-->
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView7"
+        android:layout_below="@+id/tb_Criar_Jogador"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="30dp"
         android:text="foto"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#ffffff"
@@ -60,10 +64,10 @@
         android:id="@+id/nomeApelidoId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView7"
+        android:layout_below="@+id/tb_Criar_Jogador"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="110dp"
         android:layout_toRightOf="@+id/textView11"
         android:capitalize="words"
         android:textColor="@android:color/background_light"
@@ -92,7 +96,7 @@
         android:layout_below="@+id/textView11"
         android:layout_alignEnd="@+id/nomeApelidoId"
         android:layout_alignRight="@+id/nomeApelidoId"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_toRightOf="@+id/textView12">
 
         <RadioButton
@@ -120,12 +124,13 @@
     <Button
         android:id="@+id/botaoInserirId"
         android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="70dp"
+        android:layout_below="@+id/spinnerPosicaoId"
+        android:layout_alignParentBottom="false"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:background="@color/cor_botao_darker"
-        android:padding="10dp"
+        android:padding="5dp"
         android:text="Inserir"
         android:textColor="#fbfbfb"
         android:textSize="20dp"

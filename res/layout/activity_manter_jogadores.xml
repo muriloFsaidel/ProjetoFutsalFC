@@ -4,13 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal|center_vertical"
     tools:context=".activity.manter_jogadores">
+
+    <include
+        android:id="@+id/tbManterJogadores"
+        layout="@layout/toolbar"
+        >
+    </include>
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tbManterJogadores"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="10dp"
         android:text="consulta e atualização de jogadores pelo nome da lista"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -57,13 +64,13 @@
         android:id="@+id/Voltar2Id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView5"
+        android:layout_below="@+id/spinnerAtivo"
         android:layout_marginLeft="120dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/ic_exit_to_app"
         android:onClick="voltarDois" />
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -72,12 +79,14 @@
         android:text="Obs. Ativo: SIM|NÃO"
         android:textSize="16sp"
         android:textStyle="bold|italic" />
+        android:gravity="center_horizontal|center_vertical"(RelativeLayout)
+        -->
 
     <Button
         android:id="@+id/botaoAtualizarJogadoresId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView5"
+        android:layout_below="@+id/spinnerAtivo"
         android:layout_marginLeft="230dp"
         android:layout_marginTop="2dp"
         android:text="Atualizar" />

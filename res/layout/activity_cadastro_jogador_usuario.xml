@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|center_horizontal"
+    tools:context=".activity.CadastroJogadorUsuario">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:background="@drawable/camisacadastro" />
+
+    <EditText
+        android:id="@+id/etNomeCadastroJogadorUsuarioId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView6"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
+
+    <EditText
+        android:id="@+id/etEmailResponsavelCadastroJogadorUsuarioId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etNomeCadastroJogadorUsuarioId"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Email do responsável pelo time"
+        android:inputType="textEmailAddress"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
+
+    <EditText
+        android:id="@+id/etEmailJogadorCadastroJogadorUsuarioId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etEmailResponsavelCadastroJogadorUsuarioId"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Email do jogador"
+        android:inputType="textEmailAddress"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
+
+    <EditText
+        android:id="@+id/etSenhaJogadorCadastroJogadorUsuarioId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etEmailJogadorCadastroJogadorUsuarioId"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
+
+    <Button
+        android:id="@+id/botaoCadastrarJogadorUsuarioId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etSenhaJogadorCadastroJogadorUsuarioId"
+        android:layout_marginTop="20dp"
+        android:text="Cadastrar"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:theme="@style/BotaoPadrao" />
+
+</RelativeLayout>

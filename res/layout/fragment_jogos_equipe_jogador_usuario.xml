@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.JogosEquipeJogadorUsuario">
+
+
+
+    <TextView
+        android:id="@+id/textViewJogadorUsuarioJogos"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:gravity="clip_vertical|center_horizontal"
+        android:text="Bem-vindo ao FutsalFC"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="@dimen/botaoIniciar"
+        android:textStyle="bold|italic" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="fill_parent"
+        android:layout_height="168dp"
+        android:layout_marginTop="445dp"
+        android:background="@drawable/ligafutsal" />
+
+    <Button
+        android:id="@+id/btJogosJogadorUsuario"
+        android:layout_width="160dp"
+        android:layout_height="130dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="70dp"
+        android:background="@color/cor_botao_darker"
+        android:padding="10dp"
+        android:text="Jogos"
+        android:textSize="20dp"
+        android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/btEstatisticasJogadorUsuario"
+        android:layout_width="160dp"
+        android:layout_height="130dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="70dp"
+        android:background="@color/cor_botao_darker"
+        android:padding="10dp"
+        android:text="Estatísticas"
+        android:textSize="20dp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/TvVerificarEmailEquipeJogadorUsuarioId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal" />
+
+</FrameLayout>

@@ -4,22 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal|center_vertical"
     tools:context=".activity.CriarEquipeActivity">
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/imageView5"
         android:layout_width="fill_parent"
         android:layout_height="@dimen/logo_largura"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/ligafutsal" />
+        android:background="@drawable/ligafutsal" />-->
+
+    <include
+        android:id="@+id/tbCriarEquipe"
+        layout="@layout/toolbar"></include>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView5"
-        android:layout_marginTop="47dp"
+        android:layout_below="@+id/tbCriarEquipe"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/textView2"
         android:text="Dados do Time"
         android:textAlignment="center"
@@ -100,11 +105,11 @@
         android:layout_below="@+id/textView4"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="35dp"
         android:layout_marginBottom="16dp"
         android:background="@color/cor_botao_darker"
         android:padding="10dp"
-        android:text="criar equipe"
+        android:text="criar"
         android:textColor="#ffffff"
         android:textSize="@dimen/botaoIniciar"
         android:textStyle="normal|bold|italic" />

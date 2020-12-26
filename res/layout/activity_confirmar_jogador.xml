@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ConfirmarJogador">
+
+    <include
+        android:id="@+id/toolbar_confirmar_jogador"
+        layout="@layout/toolbar"
+        ></include>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/imageView8"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ligafutsal" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_confirmar_dados_jogador_usuario"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_exit_to_app"
+        android:onClick="voltar8" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Nome do Jogador: "
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etNomeJogadorUsuario"
+        android:layout_marginTop="20dp"
+        android:text="Email Responsável:"
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etNomeJogadorUsuario"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView9"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="7dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etEmailResponsavelConfirmar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView16"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="7dp"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/bt_confirmar_dados_jogador_usuario"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etEmailResponsavelConfirmar"
+        android:layout_marginTop="20dp"
+        android:background="@color/cor_botao_darker"
+        android:text="Atualizar dados jogador usuário"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+</RelativeLayout>

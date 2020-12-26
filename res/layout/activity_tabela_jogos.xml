@@ -4,25 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal|center_vertical"
     tools:context=".activity.TabelaJogos">
 
+    <include
+        android:id="@+id/tbTabelaJogos"
+        layout="@layout/toolbar">
+
+    </include>
     <ListView
         android:id="@+id/LVAllId"
         android:layout_width="fill_parent"
-        android:layout_height="504dp"
+        android:layout_height="300dp"
         android:layout_below="@+id/CHReloadId"
         android:layout_alignParentRight="true"
         android:layout_marginTop="20dp"
         android:divider="@color/colorAccent"
-        android:dividerHeight="1dp"/>
+        android:dividerHeight="1dp" />
 
     <EditText
         android:id="@+id/ETDateId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tbTabelaJogos"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="29dp"
         android:ems="10"
         android:hint="DDMMAAAA"
         android:inputType="date"
@@ -32,11 +37,12 @@
         android:id="@+id/botaoConsultarId"
         android:layout_width="176dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tbTabelaJogos"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginStart="-1dp"
         android:layout_marginLeft="-1dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="3dp"
         android:layout_marginRight="3dp"
         android:layout_toEndOf="@+id/ETDateId"
@@ -66,6 +72,14 @@
         android:background="@drawable/ic_exit_to_app"
         android:foregroundGravity="center_vertical|center_horizontal"
         android:onClick="Voltar4" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="fill_parent"
+        android:layout_height="198dp"
+        android:layout_below="@+id/botaoVoltarTabelaJogosId"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ligafutsal" />
 
 
 </RelativeLayout>

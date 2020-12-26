@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools" tools:context=".activity.MainActivity2">
+
+
+
+    <item android:id="@+id/Redefinir_Senha_Jogador_Usuario" android:title="Redefinir Senha"
+          android:orderInCategory="100" app:showAsAction="never"/>
+    <item android:id="@+id/action_exit_Jogador_Usuario"  android:title="Sair"
+          android:orderInCategory="200" app:showAsAction="ifRoom"
+          android:icon="@drawable/ic_exit_to_app"/>
+
+</menu>
+
+<!-- orderInCategory é a ordem de inportância dos itens
+     showAsAction é a posição do item na toolbar. Ifroom == se couber fora dos :(3pontos) -->

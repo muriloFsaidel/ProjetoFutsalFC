@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.PerfilAdmin">
+
+    <include
+        android:id="@+id/toolbar_principal_perfil_admin"
+        layout="@layout/toolbar"
+        ></include>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listView_Perfil_adm"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:text="Nome:"
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView19"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:text="Email:"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/botaoAtualizarAdminId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etEmailAdminId"
+        android:layout_marginTop="30dp"
+        android:text="Atualizar dados"
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textSize="14sp"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/etNomeAdminId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listView_Perfil_adm"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/textView19"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etEmailAdminId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etNomeAdminId"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/textView20"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <ListView
+        android:id="@+id/listView_Perfil_adm"
+        android:layout_width="fill_parent"
+        android:layout_height="165dp"
+        android:layout_below="@+id/toolbar_principal_perfil_admin"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="60dp" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/botaoAtualizarAdminId"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/ic_exit_to_app"
+        android:onClick="voltar9" />
+
+
+
+</RelativeLayout>

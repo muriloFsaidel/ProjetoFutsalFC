@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal|center_vertical"
+    android:gravity="center_vertical|center_horizontal"
     tools:context=".activity.CadastroUsuarioActivity">
 
     <ImageView
@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
-        android:background="@drawable/camisacadastro" />
+        android:background="@drawable/coach" />
 
     <EditText
         android:id="@+id/ETNomeId"
@@ -22,7 +22,9 @@
         android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Digite seu nome"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
 
     <EditText
         android:id="@+id/ETEmailId"
@@ -32,7 +34,9 @@
         android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Digite seu email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
 
     <EditText
         android:id="@+id/ETSenhaId"
@@ -42,7 +46,9 @@
         android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Digite sua Senha"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
 
     <Button
         android:id="@+id/BTCadastrarId"

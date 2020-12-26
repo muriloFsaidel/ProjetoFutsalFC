@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity2"
+    android:orientation="vertical"
+    >
+
+    <include
+        android:id="@+id/toolbar_principal_Jogador_Usuario"
+        layout="@layout/toolbar"
+        ></include>
+
+    <cursoandroid.whatsappandroid.com.futsalfc.helper.SlidingTabLayout
+        android:id="@+id/stl_tab_Jogador_Usuario"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark"
+        >
+    </cursoandroid.whatsappandroid.com.futsalfc.helper.SlidingTabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_pagina_Jogador_Usuario"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <!--<TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="150dp"
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textStyle="bold|italic" />
+
+        layout_wight= grau de ocupação 1==100%-->
+</LinearLayout>

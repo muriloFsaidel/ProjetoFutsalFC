@@ -28,20 +28,21 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ETSenhaId"
+        android:layout_marginLeft="2dp"
         android:layout_marginTop="20dp"
-        android:text="Logar"
+        android:layout_marginRight="180dp"
+        android:text="Logar como administrador"
         android:textAlignment="center"
         android:textStyle="bold|italic"
-        android:theme="@style/BotaoPadrao"
-        />
+        android:theme="@style/BotaoPadrao" />
 
     <TextView
         android:id="@+id/TVCadastreSeId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/BTLogarId"
-        android:layout_marginLeft="115dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
         android:onClick="abrirCadastroUsuario"
         android:text="Não tem conta? Cadastre-se."
         android:textAlignment="center"
@@ -57,4 +58,31 @@
         android:ems="10"
         android:hint="Digite sua senha"
         android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/BTLogarUsuarioJogadorId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ETSenhaId"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="2dp"
+        android:text="logar como jogador"
+        android:textStyle="bold|italic"
+        android:theme="@style/BotaoPadrao" />
+
+    <TextView
+        android:id="@+id/TVForgotPasswordId"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BTLogarUsuarioJogadorId"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_toEndOf="@+id/TVCadastreSeId"
+        android:onClick="redefinirSenhaPorEmail"
+        android:text="Esqueceu a senha?"
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textStyle="bold|italic" />
 </RelativeLayout>

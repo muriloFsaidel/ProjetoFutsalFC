@@ -4,21 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal|center_vertical"
     tools:context=".activity.Manter_Equipe">
+
+    <include
+        android:id="@+id/tbManterEquipe"
+        layout="@layout/toolbar"
+       >
+
+    </include>
 
     <TextView
         android:id="@+id/textView32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/tbManterEquipe"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp"
-        android:text="consulta e atualização da equipe"
+        android:layout_marginTop="60dp"
+        android:text="consulta e atualização de equipe"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@android:color/background_light" />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/textView34"
         android:layout_width="412dp"
         android:layout_height="wrap_content"
@@ -28,7 +34,7 @@
         android:gravity="center"
         android:text="Nome &amp; Liga"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@android:color/holo_green_dark" />
+        android:textColor="@android:color/holo_green_dark" />-->
 
     <EditText
         android:id="@+id/editTextLigaId"
@@ -64,12 +70,14 @@
     <ListView
         android:id="@+id/listViewNomeLigaId"
         android:layout_width="fill_parent"
-        android:layout_height="70dp"
-        android:layout_below="@+id/textView34"
+        android:layout_height="135dp"
+        android:layout_below="@+id/textView32"
         android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="19dp"
         android:divider="@color/gray"
         android:dividerHeight="1dp"
         android:foregroundGravity="center_vertical|center_horizontal" />
+        <!--android:layout_below="@+id/textView34"/>-->
 
     <ImageView
         android:id="@+id/VoltarId"
