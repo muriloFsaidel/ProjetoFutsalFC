@@ -10,7 +10,7 @@ import cursoandroid.whatsappandroid.com.futsalfc.fragment.JogosFragment;
 
 public class TabAdapter extends FragmentStatePagerAdapter {
 
-    private String[] tituloAbas = {"EQUIPES","JOGOS"};
+    private String[] tituloAbas = {"EQUIPE","JOGOS"};
 
     public TabAdapter(@NonNull FragmentManager fm) {
         super(fm);
@@ -22,9 +22,11 @@ public class TabAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         Fragment fragment = null;
 
+        //dado a escolha da posição
         switch(position){
 
             case 0:
+                //instancia o fragment escolhido
                 fragment = new EquipesFragment();
                 break;
 
@@ -32,6 +34,7 @@ public class TabAdapter extends FragmentStatePagerAdapter {
                 fragment = new JogosFragment();
                 break;
         }
+        //e o retorna
         return fragment;
     }
 

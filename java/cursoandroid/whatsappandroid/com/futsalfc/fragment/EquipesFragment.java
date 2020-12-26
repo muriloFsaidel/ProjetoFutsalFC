@@ -12,8 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,6 +45,8 @@ public class EquipesFragment extends Fragment {
     private Button botaoManterJogador;
     private DatabaseReference firebase;
     private String idEquipeFirebase="";
+    private FirebaseAuth autenticacao;
+    private TextView verificarEmail;
 
     public EquipesFragment() {
         // Required empty public constructor
@@ -56,6 +63,28 @@ public class EquipesFragment extends Fragment {
         botaoInserirJogador = (Button) view.findViewById(R.id.botaoInserirJogadorFragmentId);
         botaoManterEquipe = (Button) view.findViewById(R.id.botaoManterEquipeId);
         botaoManterJogador = (Button) view.findViewById(R.id.botaoManterJogadorId);
+        verificarEmail = (TextView) view.findViewById(R.id.TvVerificarEmailEquipesADMId);
+
+
+        autenticacao = ConfiguracaoFirebase.getAutenticacao();
+        FirebaseUser user = autenticacao.getCurrentUser();
+
+        if(user.isEmailVerified()){
+            verificarEmail.setText("");
+        }else{
+            verificarEmail.setText("Favor confirmar email cadastrado na sua caixa de entrada pessoal");
+            user.sendEmailVerification()
+                    .addOnCompleteListener(new OnCompleteListener<Void>(){
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task){
+                            if(task.isSuccessful()){
+                                Toast.makeText(getActivity(), "Email de verificação enviado", Toast.LENGTH_LONG).show();
+                            }else{
+                                Toast.makeText(getActivity(), "Erro ao enviar email de verificação", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+        }
 
         Preferencias preferencias = new Preferencias(getActivity());
         String identificadorUsuario = preferencias.getIdentificadorUsuario();

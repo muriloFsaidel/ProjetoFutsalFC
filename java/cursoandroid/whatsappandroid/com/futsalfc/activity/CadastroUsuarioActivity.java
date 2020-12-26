@@ -99,7 +99,7 @@ public class CadastroUsuarioActivity extends Activity {
                     try {
                         throw task.getException();
                     }catch(FirebaseAuthWeakPasswordException e){
-                            erro = "Digite uma senha mais forte, contendo mais caracteres e com letras e números";
+                            erro = "Digite uma senha mais forte, contendo mais caracteres com letras e números";
                     }
                     catch(FirebaseAuthInvalidCredentialsException e){
                             erro = "o email informado é inválido, digite um novo email";

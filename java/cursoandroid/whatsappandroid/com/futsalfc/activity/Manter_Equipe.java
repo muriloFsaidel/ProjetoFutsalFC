@@ -2,9 +2,11 @@ package cursoandroid.whatsappandroid.com.futsalfc.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import cursoandroid.whatsappandroid.com.futsalfc.Adapter.EquipeAdaptador;
 import cursoandroid.whatsappandroid.com.futsalfc.R;
 import cursoandroid.whatsappandroid.com.futsalfc.config.ConfiguracaoFirebase;
 import cursoandroid.whatsappandroid.com.futsalfc.helper.Preferencias;
@@ -29,14 +32,32 @@ public class Manter_Equipe extends AppCompatActivity {
 
     private ListView listView;
     private ArrayAdapter adapter;
-    private ArrayList<String> nomeAndliga;
+    private ArrayList<Equipe> nomeAndliga;
     private EditText liga;
     private Button botaoAtualizaLiga;
     private String idEquipe;
     private String nomeEquipe;
     private DatabaseReference firebaseConsulta;
+    private ValueEventListener valueEventListenerConsulta;
     private DatabaseReference firebaseAtualiza;
     private ImageView voltar;
+    private Toolbar toolbar;
+
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        firebaseConsulta.addValueEventListener(valueEventListenerConsulta);
+        Log.i("ValueEventListener","onStart");
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        //Para a consulta quando a activity for pausada
+        firebaseConsulta.removeEventListener(valueEventListenerConsulta);
+        Log.i("ValueEventListener","onStop");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,14 +68,24 @@ public class Manter_Equipe extends AppCompatActivity {
         liga = (EditText) findViewById(R.id.editTextLigaId);
         botaoAtualizaLiga = (Button) findViewById(R.id.botaoAtualizaLiga);
         voltar = (ImageView) findViewById(R.id.VoltarId);
+        toolbar = (Toolbar) findViewById(R.id.tbManterEquipe);
+
+        toolbar.setTitle("Manter Equipe");
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_left);
+        setSupportActionBar(toolbar);
 
         nomeAndliga = new ArrayList<>();
 
+        /* implementação padrão
         adapter = new ArrayAdapter(
                 getApplicationContext(),
                 R.layout.lista_personalizada,
                 nomeAndliga
-        );
+        )*/;
+
+        //personalizada
+        adapter = new EquipeAdaptador(getApplicationContext(),nomeAndliga);
+
 
         listView.setAdapter(adapter);
 
@@ -64,7 +95,7 @@ public class Manter_Equipe extends AppCompatActivity {
 
         firebaseConsulta = ConfiguracaoFirebase.getFirebase().child("equipes").child(identificadorUsuario);
 
-        firebaseConsulta.addValueEventListener(new ValueEventListener() {
+        valueEventListenerConsulta = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -73,19 +104,18 @@ public class Manter_Equipe extends AppCompatActivity {
                 for(DataSnapshot dados: snapshot.getChildren()){
 
                     Equipe equipe = dados.getValue(Equipe.class);
-                    nomeAndliga.add(equipe.getNome()+"   "+equipe.getLiga());
+                    nomeAndliga.add(equipe);
                     idEquipe = equipe.getIdentificadorEquipe();
                     nomeEquipe = equipe.getNome();
                 }
-                    adapter.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });
-
+        };
 
         botaoAtualizaLiga.setOnClickListener(new View.OnClickListener(){
             @Override

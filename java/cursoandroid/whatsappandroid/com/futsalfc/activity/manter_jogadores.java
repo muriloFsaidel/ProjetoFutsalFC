@@ -2,9 +2,11 @@ package cursoandroid.whatsappandroid.com.futsalfc.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -23,6 +25,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import cursoandroid.whatsappandroid.com.futsalfc.Adapter.JogadorAdaptador;
 import cursoandroid.whatsappandroid.com.futsalfc.R;
 import cursoandroid.whatsappandroid.com.futsalfc.config.ConfiguracaoFirebase;
 import cursoandroid.whatsappandroid.com.futsalfc.helper.Base64Custom;
@@ -36,7 +39,7 @@ public class manter_jogadores extends AppCompatActivity {
 
     private ListView lvjogadores;
     private ArrayAdapter adapterJogadores;
-    private ArrayList<String> alJogadores;
+    private ArrayList<Jogador> alJogadores;
     private ArrayList<String> alNomeJogadores;
     private EditText etnomeJogador;
     private Button botaoAtualizar;
@@ -45,6 +48,7 @@ public class manter_jogadores extends AppCompatActivity {
     private String identificadorUsuarioLogado ="";
     private String identificadorJogador="";
     private String nomeJogadorSelecionado ="";
+    private ValueEventListener valueEventListenerJogador;
 
     private Spinner spPosicao;
     private Spinner spAtivo;
@@ -55,6 +59,24 @@ public class manter_jogadores extends AppCompatActivity {
     private ArrayList<String> alAtivo;
     private ArrayList<String> alAtivoFirebase;
     private ArrayList<String> alIdJogador;
+    private Toolbar toolbar;
+
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        //consulta dos jogadores
+        firebase.addValueEventListener(valueEventListenerJogador);
+        Log.i("EventListenerJogador","onStart");
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        //Para a consulta quando a activity for pausada
+        firebase.removeEventListener(valueEventListenerJogador);
+        Log.i("EventListenerJogador","onStop");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +88,11 @@ public class manter_jogadores extends AppCompatActivity {
         botaoAtualizar = (Button) findViewById(R.id.botaoAtualizarJogadoresId);
         spPosicao = (Spinner) findViewById(R.id.spinnerPosicaoId);
         spAtivo = (Spinner) findViewById(R.id.spinnerAtivo);
+        toolbar = (Toolbar) findViewById(R.id.tbManterJogadores);
+
+        toolbar.setTitle("Manter Jogadores");
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_left);
+        setSupportActionBar(toolbar);
 
         alJogadores = new ArrayList<>();
         alNomeJogadores = new ArrayList<>();
@@ -85,11 +112,16 @@ public class manter_jogadores extends AppCompatActivity {
         alPosicaoFirebase = new ArrayList<>();
         alAtivoFirebase = new ArrayList<>();
 
+        /* padrão
         adapterJogadores = new ArrayAdapter(
                 getApplicationContext(),
                 R.layout.lista_personalizada,
                 alJogadores
-        );
+        );*/
+
+        //personalizado
+        adapterJogadores = new JogadorAdaptador(getApplicationContext(),alJogadores);
+
 
         lvjogadores.setAdapter(adapterJogadores);
 
@@ -115,8 +147,7 @@ public class manter_jogadores extends AppCompatActivity {
 
         firebase = ConfiguracaoFirebase.getFirebase().child("jogadores").child(identificadorEquipe).child(identificadorUsuarioLogado);
 
-        //consulta dos jogadores
-        firebase.addValueEventListener(new ValueEventListener() {
+        valueEventListenerJogador = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -129,7 +160,7 @@ public class manter_jogadores extends AppCompatActivity {
 
                 for(DataSnapshot dados: snapshot.getChildren()){
                     Jogador jogador =  dados.getValue(Jogador.class);
-                    alJogadores.add(jogador.getNome() +"  "+jogador.getPosicao()+ "  "+ jogador.getAtivo());
+                    alJogadores.add(jogador);
                     alIdJogador.add(jogador.getIdentificadorJogador());
                     alNomeJogadores.add(jogador.getNome());
                     alPosicaoFirebase.add(jogador.getPosicao());
@@ -142,7 +173,7 @@ public class manter_jogadores extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });
+        };
 
         lvjogadores.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -162,7 +193,7 @@ public class manter_jogadores extends AppCompatActivity {
                if(etnomeJogador.getText().toString().equals("")){
                    Toast.makeText(getApplicationContext(),"Favor Verificar nome do jogador", Toast.LENGTH_LONG).show();
                }else{
-                   String nomeJogador = etnomeJogador.getText().toString();
+                   String nomeJogador = etnomeJogador.getText().toString().toLowerCase();
                    String posicao = (String) spPosicao.getSelectedItem();
                    String ativo = (String) spAtivo.getSelectedItem();
                    atualizarJogador(identificadorJogador,nomeJogador,posicao,ativo);

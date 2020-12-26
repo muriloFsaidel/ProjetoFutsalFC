@@ -22,8 +22,6 @@ public class Usuario {
         referenciaFirebase.child("usuarios").child( getId()).setValue(this);
     }
 
-    //exclui o atributo do objeto Usu
-    @Exclude
     public String getId(){
         return id;
     }
@@ -49,6 +47,7 @@ public class Usuario {
         this.email = email;
     }
 
+    //exclui o atributo do objeto Usu
     @Exclude
     public String getSenha(){
         return senha;

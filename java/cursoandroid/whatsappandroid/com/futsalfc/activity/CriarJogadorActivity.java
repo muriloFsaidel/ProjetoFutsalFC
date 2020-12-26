@@ -2,11 +2,11 @@ package cursoandroid.whatsappandroid.com.futsalfc.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -27,11 +27,10 @@ import cursoandroid.whatsappandroid.com.futsalfc.R;
 import cursoandroid.whatsappandroid.com.futsalfc.config.ConfiguracaoFirebase;
 import cursoandroid.whatsappandroid.com.futsalfc.helper.Base64Custom;
 import cursoandroid.whatsappandroid.com.futsalfc.helper.Preferencias;
-import cursoandroid.whatsappandroid.com.futsalfc.template.Equipe;
 import cursoandroid.whatsappandroid.com.futsalfc.template.Estatistica;
 import cursoandroid.whatsappandroid.com.futsalfc.template.Jogador;
 
-public class CriarJogadorActivity extends Activity {
+public class CriarJogadorActivity extends AppCompatActivity {
 
     private EditText nomeJogador;
     private RadioGroup rgAtivo;
@@ -42,7 +41,8 @@ public class CriarJogadorActivity extends Activity {
     private Button botaoInserir;
     private DatabaseReference firebase;
     private String[] posicoes = {"Goleiro","Fixo","Ala","Pivô"};
-    private boolean existente;
+    public boolean existente = false;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +53,11 @@ public class CriarJogadorActivity extends Activity {
         rgAtivo = (RadioGroup) findViewById(R.id.radioGroupId);
         spPosicao = (Spinner) findViewById(R.id.spinnerPosicaoId);
         botaoInserir = (Button) findViewById(R.id.botaoInserirId);
+        toolbar = (Toolbar) findViewById(R.id.tb_Criar_Jogador);
+
+        toolbar.setTitle("Inserir Jogadores");
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_left);
+        setSupportActionBar(toolbar);
 
         //preenchendo spinner com as posições
         alPosicoes = new ArrayList();
@@ -145,7 +150,7 @@ public class CriarJogadorActivity extends Activity {
 
     private void capturarDados(){
 
-        String jogadorSelecionado = nomeJogador.getText().toString();
+        String jogadorSelecionado = nomeJogador.getText().toString().toLowerCase();
 
         // capturando radioButton selecionado
         int identificadorAtivo = rgAtivo.getCheckedRadioButtonId();
@@ -157,8 +162,8 @@ public class CriarJogadorActivity extends Activity {
         //armazenando posição selecionada
         String posicaoSelecionada = (String) spPosicao.getSelectedItem();
 
-        if(ativoSelecionado.equals("") || posicaoSelecionada.equals("")){
-            Toast.makeText(getApplicationContext(),"Favor escolher posição & ativo",Toast.LENGTH_LONG).show();
+        if(ativoSelecionado.equals("") || posicaoSelecionada.equals("") || jogadorSelecionado.equals("")){
+            Toast.makeText(getApplicationContext(),"Favor escolher posição & ativo, senão preencha o nome do jogador",Toast.LENGTH_LONG).show();
         }
         else{
             jogadorExistente(jogadorSelecionado,ativoSelecionado,posicaoSelecionada);
@@ -171,23 +176,31 @@ public class CriarJogadorActivity extends Activity {
         String idEquipe = preferencias.getIdentificadorEquipe();
         String idUsuario = preferencias.getIdentificadorUsuario();
 
-        String idJogadorSelecionado = Base64Custom.codificarParaBase64(jogadorSelecionado);
+        //String idJogadorSelecionado = Base64Custom.codificarParaBase64(jogadorSelecionado);
 
         firebase = ConfiguracaoFirebase.getFirebase();
 
-        firebase = firebase.child("jogadores").child(idEquipe).child(idUsuario).child(idJogadorSelecionado);
+        firebase = firebase.child("jogadores").child(idEquipe).child(idUsuario);
 
         firebase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.getValue()!= null){
-                    existente = true;
-                    Toast.makeText(getApplicationContext(),"Jogador já existente, favor digitar outro", Toast.LENGTH_LONG).show();
+
+                for(DataSnapshot dados: snapshot.getChildren()){
+                    Jogador jogador = dados.getValue(Jogador.class);
+                    // se o jogador passado no editText for igual a algum jogador do firebase
+                    if(jogadorSelecionado.equals(jogador.getNome())){
+                        existente = true;
+                        Toast.makeText(getApplicationContext(),"Jogador já existente, favor digitar outro", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(CriarJogadorActivity.this, MainActivity.class);
+                        finish();
+                    }
                 }
-                else{
-                    existente = false;
+
+                if(existente == false){
                     inserirJogador(jogadorSelecionado, ativoSelecionado, posicaoSelecionada);
                 }
+
             }
 
             @Override
